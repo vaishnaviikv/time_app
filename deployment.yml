@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sampletimeapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sampletimeapp
+  template:
+    metadata:
+      labels:
+        app: sampletimeapp
+    spec:
+      containers:
+      - name: sampletimeapp
+        image: gcr.io/vaishnavi-416620/sample_time_app:latest
+        ports:
+        - containerPort: 80
